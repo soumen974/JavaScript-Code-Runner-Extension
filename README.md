@@ -2,8 +2,8 @@
 
 A powerful Chrome extension for running JavaScript code with real-time output and syntax highlighting.
 
-![Extension Screenshot](![image]([https://github.com/user-attachments/assets/1df54272-decc-4ba5-876d-b21b4838e920](https://github.com/soumen974/JavaScript-Code-Runner-Extension/blob/master/image.png))
-)
+## How to Use!![Screenshot 2024-12-22 024049](https://github.com/user-attachments/assets/e8d2a0f4-816e-41ea-afc6-c8e81ee580b5)
+
 
 ## Quick Installation Guide
 
@@ -26,11 +26,12 @@ https://github.com/soumen974/JavaScript-Code-Runner-Extension/archive/refs/heads
 - 🔄 Run code instantly
 - 📝 Code editor with line numbers
 
-## How to Use
+
+
 
 1. Click the extension icon in Chrome toolbar
 2. Write your JavaScript code in the editor
-3. Click "Run Code" to see the output
+3. Click "Run Code" to see the output!
 4. Use "Clear" to reset the editor
 
 ## Current Features Display
