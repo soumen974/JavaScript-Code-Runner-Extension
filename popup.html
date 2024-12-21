@@ -13,7 +13,7 @@
     }
 
     body {
-      width: 600px;
+      width:450px;
       font-family: 'Segoe UI', 'SF Pro Display', system-ui, -apple-system, sans-serif;
       background: #1e1e1e;
       color: #ffffff;
@@ -37,13 +37,23 @@
     .header h1 {
       font-size: 1.2rem;
       font-weight: 500;
-      color: #fff;
+      /* color: #fff; */
     }
 
     .editor-container {
       background: #2d2d2d;
       border-radius: 8px;
       overflow: hidden;
+    }
+
+    .gradient-text {
+      font-size: 24px;
+      font-weight: bold;
+      background: linear-gradient(to right, #6366f1, #a855f7); /* indigo-500 to purple-500 */
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 8px;
     }
 
     .CodeMirror {
@@ -74,13 +84,13 @@
     }
 
     .btn-primary {
-      background: #0098ff;
+      background: linear-gradient(to right, #6366f1, #a855f7);
       color: white;
     }
 
     .btn-primary:hover {
-      background: #0088e6;
-    }
+      opacity: 0.9;   
+     }
 
     .btn-secondary {
       background: #4a4a4a;
@@ -154,12 +164,31 @@
     ::-webkit-scrollbar-thumb:hover {
       background: #666;
     }
+    .CodeMirror-cursor {
+    border-left: 1px solid #fff !important;
+    background: none !important;
+  }
+  
+  .CodeMirror {
+    /* Your existing CodeMirror styles */
+    caret-color: white; /* Makes the native cursor white */
+  }
+  
+  /* Hide any mode indicators */
+  .CodeMirror-mode-indicator {
+    display: none !important;
+  }
+  
+  /* Ensure proper cursor in insert mode */
+  .CodeMirror.cm-fat-cursor {
+    caret-color: transparent;
+  }
   </style>
 </head>
 <body>
   <div class="container">
     <div class="header">
-      <h1>JavaScript Code Runner</h1>
+      <h1 class="gradient-text">JavaScript Code Runner</h1>
       <div class="status">
         <div class="status-dot"></div>
         <span>Ready</span>
@@ -198,8 +227,8 @@ console.log('Hello, World!');</textarea>
   </div>
 
   <!-- Scripts -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
+  <script src="lib/codemirror.min.js"></script>
+  <script src="lib/javascript.min.js"></script>
   <script src="popup.js"></script>
 </body>
 </html>

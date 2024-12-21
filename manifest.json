@@ -1,10 +1,22 @@
 {
   "manifest_version": 3,
-  "name": "JS Code Runner By Soumen Bhunia",
+  "name": "JS Code Runner BY SoumenBhunia",
   "version": "1.0",
-  "description": "An extension to write and run JavaScript code @SoumenBhunia.",
+  "description": "A JavaScript code runner with syntax highlighting BY SoumenBhunia",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
   "action": {
-    "default_popup": "popup.html"
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
   },
   "sandbox": {
     "pages": ["sandbox.html"]
