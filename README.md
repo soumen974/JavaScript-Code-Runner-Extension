@@ -61,7 +61,7 @@ For issues or suggestions, please create an issue in the repository.
 MIT License
 
 ## Author
-Created by Soumen Bera
+Created by Soumen Bhunia
 GitHub: @soumen974
 
 ---
