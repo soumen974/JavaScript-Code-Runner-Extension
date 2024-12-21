@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sandbox</title>
+</head>
+<body>
+  <script>
+    window.addEventListener('message', function(event) {
+      try {
+        const originalLog = console.log;
+        let output = '';
+        
+        console.log = function(...args) {
+          output += args.join(' ') + '\n';
+        };
+
+        eval(event.data);
+        
+        console.log = originalLog;
+        window.parent.postMessage({ result: output, error: null }, '*');
+      } catch (error) {
+        window.parent.postMessage({ result: null, error: error.message }, '*');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "JS Code Runner By Soumen Bhunia",
+  "version": "1.0",
+  "description": "An extension to write and run JavaScript code @SoumenBhunia.",
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "sandbox": {
+    "pages": ["sandbox.html"]
+  }
+}

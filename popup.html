@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Modern JS Code Runner</title>
+  <!-- Include CodeMirror for syntax highlighting -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/dracula.min.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 600px;
+      font-family: 'Segoe UI', 'SF Pro Display', system-ui, -apple-system, sans-serif;
+      background: #1e1e1e;
+      color: #ffffff;
+      padding: 15px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #363636;
+    }
+
+    .header h1 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #fff;
+    }
+
+    .editor-container {
+      background: #2d2d2d;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .CodeMirror {
+      height: 200px;
+      font-family: 'Fira Code', 'Cascadia Code', monospace;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    .controls {
+      display: flex;
+      gap: 10px;
+      padding: 10px;
+      background: #363636;
+    }
+
+    .btn {
+      padding: 8px 16px;
+      border: none;
+      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-primary {
+      background: #0098ff;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #0088e6;
+    }
+
+    .btn-secondary {
+      background: #4a4a4a;
+      color: white;
+    }
+
+    .btn-secondary:hover {
+      background: #5a5a5a;
+    }
+
+    .output-container {
+      background: #2d2d2d;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .output-header {
+      padding: 10px;
+      background: #363636;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .output-content {
+      padding: 15px;
+      min-height: 100px;
+      max-height: 200px;
+      overflow-y: auto;
+      font-family: 'Consolas', monospace;
+      font-size: 14px;
+      line-height: 1.5;
+      color: #e0e0e0;
+      white-space: pre-wrap;
+    }
+
+    .status {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: #888;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #4CAF50;
+    }
+
+    .status-error .status-dot {
+      background: #f44336;
+    }
+
+    /* Scrollbar Styling */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #2d2d2d;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background: #555;
+      border-radius: 4px;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+      background: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>JavaScript Code Runner</h1>
+      <div class="status">
+        <div class="status-dot"></div>
+        <span>Ready</span>
+      </div>
+    </div>
+
+    <div class="editor-container">
+      <textarea id="code">// Write your JavaScript code here
+console.log('Hello, World!');</textarea>
+      <div class="controls">
+        <button id="runButton" class="btn btn-primary">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 2L13 8L4 14V2Z" fill="currentColor"/>
+          </svg>
+          Run Code
+        </button>
+        <button id="clearButton" class="btn btn-secondary">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M2 4H14M6 4V2H10V4M5 4V13H11V4" stroke="currentColor" stroke-width="1.5"/>
+          </svg>
+          Clear
+        </button>
+      </div>
+    </div>
+
+    <div class="output-container">
+      <div class="output-header">
+        <span>Output</span>
+        <div class="status" id="outputStatus">
+          <div class="status-dot"></div>
+          <span>Waiting for execution...</span>
+        </div>
+      </div>
+      <div id="output" class="output-content">// Output will appear here...</div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>
