@@ -57,7 +57,7 @@ extension-folder/
 ```
 
 ## Requirements
-- Google Chrome Browser
+- Google Chrome Browser / Brave
 - Developer Mode enabled in Chrome
 
 ## Support
