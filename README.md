@@ -10,7 +10,9 @@ A powerful Chrome extension for running JavaScript code with real-time output an
 ### Step 1: Download the Extension Files
 Download and extract the extension files to your local machine.
 from this link
+```sh 
 https://github.com/soumen974/JavaScript-Code-Runner-Extension/archive/refs/heads/master.zip
+ ```
 
 ### Step 2: Install in Chrome 
 1. Open Chrome and navigate to `chrome://extensions/`
@@ -37,20 +39,23 @@ https://github.com/soumen974/JavaScript-Code-Runner-Extension/archive/refs/heads
 ## Current Features Display
 
 ## File Structure
+```sh
 extension-folder/
 ├── lib/
-│ ├── codemirror.min.js
-│ ├── codemirror.css
-│ └── javascript.min.js
+│   ├── codemirror.min.js
+│   ├── codemirror.css
+│   └── javascript.min.js
 ├── icons/
-│ ├── icon16.png
-│ ├── icon32.png
-│ ├── icon48.png
-│ └── icon128.png
+│   ├── icon16.png
+│   ├── icon32.png
+│   ├── icon48.png
+│   └── icon128.png
 ├── popup.html
 ├── popup.js
 ├── sandbox.html
 └── manifest.json
+```
+
 ## Requirements
 - Google Chrome Browser
 - Developer Mode enabled in Chrome
